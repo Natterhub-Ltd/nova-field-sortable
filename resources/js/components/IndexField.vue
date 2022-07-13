@@ -22,16 +22,14 @@
                 try {
                     const response = await this.reorderRequest(direction);
 
-                    this.$toasted.show(
+                    Nova.success(
                         this.__('The new order has been set!'),
-                        {type: 'success'}
                     );
 
                     this.$router.go(this.$router.currentRoute);
                 } catch (error) {
-                    this.$toasted.show(
+                    Nova.error(
                         this.__('An error occured while trying to reorder the resource.'),
-                        {type: 'error'}
                     );
                 }
             },
